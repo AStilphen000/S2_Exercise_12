@@ -39,6 +39,7 @@ document.getElementById("calendar").innerHTML = createCalendar(thisDay);
 // Create a function to generate the calendar table 
 function createCalendar(calDate) {
       var calendarHTML = "<table id='calendar_table'>";
+      calendarHTML += calCaption(calDate);
       calendarHTML += "</table>"; 
       return calendarHTML; 
 } 
@@ -47,4 +48,14 @@ function createCalendar(calDate) {
 function calCaption(calDate) {
       //month names array contains the list of month names 
       var monthName = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
+
+      //Determine the current month 
+      var thisMonth = calDate.getMonth();
+      
+      //Determine the curent year 
+      var thisYear = calDate.getFullYear();
+
+      //Write the caption 
+      // return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>";
+      return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>";
 }
